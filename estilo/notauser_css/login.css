@@ -1,0 +1,238 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #FFD1D4; /* Cor de fundo da página */
+}
+
+.pagina {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  max-width: 670px;
+  max-height: 460px;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0px 0px 2.5px #F277B0;
+  overflow: hidden; /* Para esconder a imagem que ultrapassa a caixa */
+}
+
+.imagem-principal {
+  flex: 1;
+  overflow: hidden; /* Para garantir que a imagem não ultrapasse a caixa */
+}
+
+.imagem-principal img {
+  width: 330px;
+  height: 460px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.login-page {
+  font-family: 'Raleway', sans-serif;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza os elementos verticalmente */
+  margin-left: -20px;
+  margin-top: 10px;
+}
+
+.navegacao-2 {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 20px;
+  margin-top: 20px;  
+  justify-content: center;
+  align-items: center;
+}
+
+.navegacao-2 h1{
+  font-family: 'Raleway', sans-serif;
+  color: #F24949;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+#botoes-1 {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0;
+  padding: 10px;
+  width: 80%;
+}
+
+#botoes-1 button {
+  font-family: 'Raleway', sans-serif;
+  margin-right: -2px;
+  margin-left: -25px;
+  background-color: #fff;
+  font-weight: bolder;
+  cursor: pointer;
+  writing-mode: horizontal-tb;
+  position: relative;
+  transition: background-color 0.3s; /* Adiciona transição suave para a mudança de cor */
+}
+
+#botoes-1 button.selecionado {
+  background-color: #F24949;
+  color: #fff;
+  font-weight: 500;
+}
+
+#botoes-1 button:not(.selecionado) {
+  font-weight: 500;
+}
+
+
+#botao-1 {
+  font-family: 'Raleway', sans-serif;
+  color: #F24949;
+  border: #F24949 solid 2px;
+  background-color: #fff;
+  border-radius: 25px;
+  z-index: 2;
+  font-size: 0.8rem;
+  padding: 8px 30px;
+}
+
+#botao-2 {
+  font-family: 'Raleway', sans-serif;
+  color: #F24949;
+  border: #F24949 solid 2px;
+  background-color: #fff;
+  border-radius: 25px;
+  z-index: 1;
+  font-size: 0.8rem;
+  padding: 8px 35px;
+}
+
+#formulario{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#formulario .real-form{
+  font-family: 'Raleway', sans-serif;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#formulario .real-form input::placeholder{
+  font-family: 'Raleway', sans-serif;
+  color: #F24949;
+  font-weight: 500;
+}
+
+#formulario .real-form :focus::placeholder {
+  font-family: 'Raleway', sans-serif;
+  color: #FFCED1;;
+}
+
+#formulario .real-form input {
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #EF265A;
+  margin: 10px;
+  padding: 8px;
+  width: 80%;
+  transition: border-bottom-color 0.3s;
+}
+
+#formulario .real-form input:focus {
+  border-bottom-color: #F24949;;
+}
+
+#formulario .senha-container {
+  position: relative;
+}
+
+#formulario .olho-icon {
+  cursor: pointer;
+  margin-left: -50px;
+}
+
+#botao-3{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  background-color: #F24949;
+  font-weight: normal;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px; 
+  padding: 8px 45px;
+  font-size: 0.8rem;
+  margin-left: -20px;
+}
+
+#botao-3:hover{
+  background-color: #F65E77;
+  font-weight: normal;
+  padding: 8px 45px;
+  font-size: 0.8rem;
+}
+
+#botao-3.desativado {
+  pointer-events: none;
+  background-color: #e4e4e4; /* ou qualquer outra cor que indique visualmente que o botão está desativado */
+  cursor: not-allowed;
+}
+
+#mensagem-erro {
+  width: 80%;
+  display: none;
+  background-color: #FFD1D4; /* Cor de fundo */
+  color: black; /* Cor do texto */
+  border: 1px solid #cc0000; 
+  border-radius: 5px; /* Cantos arredondados */
+  margin-right: 25px;
+  margin-top: 5px; /* Espaço acima da mensagem */
+  margin-bottom: 0px;
+}
+
+#mensagem-erro-texto {
+padding: 8px;
+margin: 0; /* Remover margens padrão */
+font-size: 0.85rem; /* Tamanho da fonte */
+line-height: 1.5;
+text-align: center;
+}
+
+#link{
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  margin-left: -20px;
+}
+
+#link a{
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: blue;
+  cursor: pointer;
+}
+
+.botoes-redes{
+  display: flex;
+}
+

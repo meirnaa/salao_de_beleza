@@ -1,0 +1,58 @@
+
+<!-- PÁGINA DE SIGN UP -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftHair</title>        
+    <link rel ="stylesheet" href = "../estilo/notauser_css/inscrever_se.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iN17ZLqnprn7dKOUHGAjZfYD5P6be4uH5p2L5P5Z2ERpjwGfoFSLFA" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="pagina">
+        <!-- Imagem Principal do lado esquerdo -->
+        <div class="imagem-principal">
+            <img src="../imagens/2.png" alt="SoftHair">
+        </div>
+
+        <!-- Conteúdo principal do lado direito -->
+        <div class="login-page">
+            <!-- Navegação login/inscrever -->
+                <!-- Botões -->
+                <div id="botoes-1">
+                    <button onclick="ir_para_SH1()" id="botao-1" class="selecionado">INSCREVA-SE</button>
+                    <button onclick="ir_para_SH2()" id="botao-2">LOGIN</button>
+                </div>            
+                
+                <!-- Div para exibir mensagens de erro -->
+                <div id="mensagem-erro" style="display: none;">
+                    <p id="mensagem-erro-texto"></p>
+                </div>
+
+                <!-- Formulário -->
+                <form id="formulario" method="post">
+                    <div class="real-form">
+                        <input id="nome" name="nome" type="text" placeholder="SEU NOME" autocomplete="name" required>
+                        <input id="telefone" name="telefone" type="tel" placeholder="SEU TELEFONE" maxlength="11" autocomplete="name" required>
+                        <input id="email" name="email" type="email" placeholder="SEU EMAIL" autocomplete="email" required>
+                        <input id="password" name="senha" type="password" placeholder="SUA SENHA" maxlength="10" autocomplete="new-password" required>
+                        <span class="olho-icon" onclick="toggleSenhaVisibility()">
+                            <i id="olho-icon" class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+            
+                    <!-- Botão de confirmação dentro do formulário -->
+                    <input id="botao-3" type="submit" value="CRIAR CONTA" onclick="validarFormulario()">
+                    <p id="link">Já possui uma conta? <a href="./login.html">Faça login.</a></p>
+                </form>
+
+        </div>
+        <script src="../funções/notauser_js/inscrever-se.js"></script> 
+</body>
+</html>

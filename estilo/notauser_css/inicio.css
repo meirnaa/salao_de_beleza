@@ -1,0 +1,511 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Alterado para coluna para centralizar verticalmente */
+    justify-content: space-between; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    background-color: white;
+}
+
+#logo {
+    width: 80px;
+    height: 75px;
+}
+
+header a {
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #F65E77;
+}
+
+header a i{
+    margin-right: 10px;
+}
+
+.login-container {
+    margin-left: 350px;
+    position: absolute;
+}
+
+.logo-container{
+    position: absolute;
+    margin-left: 700px;
+}
+
+.carrinho-container{
+    position: absolute;
+    margin-left: 1050px;
+}
+
+.carrinho-numero {
+    background-color: red; /* Cor de fundo da bolinha */
+    color: #fff; /* Cor do texto do número */
+    margin-top: 4px;
+    padding-top: 1px; /* Espaçamento interno da bolinha */
+    padding-bottom: 1px; /* Espaçamento interno da bolinha */
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 50%; /* Para tornar a bolinha circular */
+    font-size: 12px; /* Tamanho da fonte do número */
+    position: absolute;
+    top: -18px; /* Ajuste a posição vertical conforme necessário */
+    margin-left: -17px; /* Ajuste a posição horizontal conforme necessário */
+}
+
+/* Mantenha o bloco .navegacao-1 e seus estilos */
+
+.navegacao-1 {
+    background-color: #FFD1D4;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 20px; /* Adapte conforme necessário */
+    box-shadow: 0px 0px 2.5px #F277B0;
+}
+
+.barra-opcoes ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: 400px;
+}
+
+.barra-opcoes li {
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 0.95rem;
+    margin: 0 25px;
+}
+
+.barra-opcoes li a {
+    text-decoration: none;
+    color: #F26B83;
+}
+
+.barra-opcoes li a:hover {
+    color: white;
+}
+
+.banner-1 {
+    height: 250px;
+    width: 100%;
+    background-image: url('../../imagens/8.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*IMAGENS SWITCH*/
+
+.ofertas-container {
+    background-color: #FFD1D4;
+    margin-left: -15px;
+    height: 500px;
+    width: 101%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ofertas-container #promocoes{
+    font-family: 'Coppeplate', fantasy;
+    text-shadow: -2px 2px #E72156;
+    color: #F285A2;
+    font-size: 3rem;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-left: -20px;
+    align-self: center;
+    animation: 0.4s bounce 0s infinite alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+.image-container {
+    height: 400px;
+    width: 900px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.image-container a i{
+    color: gray;
+}
+
+.image-container h1{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: rgb(88, 88, 88);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1rem;   
+    font-weight: 400;
+}
+.image-container .original-price{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: line-through red;
+    text-align: center;
+    color: rgb(88, 88, 88);
+    font-weight: 300;
+    font-size: 0.95rem;   
+}
+
+.image-container .promotional-price{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: red;
+    text-align: right;
+    font-weight: 600;
+    font-size: 1.2rem;   
+}
+
+.image-container img{
+    /*border: dashed gray 3px;*/
+    height: 200px; 
+    width: 180px;
+    border-radius: 25px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+
+.image-container button{
+    justify-content: last baseline;
+    padding: 8px 12px; 
+    cursor: pointer;
+    border-radius: 10px; 
+    border: none;
+    margin-left: 15px;
+    background-color: #F277B0;
+}
+
+.botao-add {
+    transition: transform 0.2s ease-in-out; /* Adiciona uma transição suave */
+}
+
+
+.image-container button i{
+    color: white;
+}
+
+.prev-btn,
+.next-btn:hover {
+    cursor: pointer;
+}
+
+.card {
+    display: none;
+    transition: opacity 1s ease-in-out;
+}
+
+.card.active {
+    display: block;
+    opacity: 1;
+}
+
+.card:not(.active) {
+    opacity: 0;
+}
+
+/*Caixa de confirmação*/
+
+#pedir-login-dialog {
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    width: 550px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 1px solid #F65E77;
+    box-shadow: 0 0 7px #F65E77;
+}
+
+#pedir-log-cont1 {
+  display: flex;
+  align-items: center; /* Alinha verticalmente no centro */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#pedir-log-cont1 p {
+  flex: 1; /* Ocupa o espaço disponível restante */
+  color: #F26B83;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+  text-align: center; /* Alinha o texto ao centro */
+}
+
+#pedir-log-cont1 #fechar {
+    content: url('../../icons/cancel.svg');
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-right: 20px; /* Ajuste para espaçamento entre o texto e o ícone */
+    cursor: pointer;
+}
+
+#pedir-log-cont2{
+  height: 140px;
+  margin-top: 10px;
+  display: flex;
+  border-top: solid 1px #ccc;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#pedir-log-cont2 p{
+    color: #414141;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    font-family: 'Raleway', sans-serif;
+    text-align: center; /* Alinha o texto ao centro */
+}
+
+#pedir-log-cont2 button {
+    margin-top: 40px;
+    margin: 0 15px;
+    background-color: #F26B83;
+    font-weight: normal;
+    font-family: 'Raleway', sans-serif;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px; 
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+#pedir-log-cont2 button:hover {
+    background-color: #F285A2;
+    font-weight: normal;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+}
+
+/* OUTRA NAVEGAÇÃO */
+
+.navegacao-2 {
+    background-color: white;
+    margin-left: -15px;
+    height: 850px;
+    width: 101%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navegacao-2 ul{
+    margin-top: 30px;
+    margin-left: -45px;
+    display: flex;
+    list-style-type: none;
+}
+
+.navegacao-2 li{
+    text-align: center;
+    margin: 0 25px;
+}
+
+.navegacao-2 img{
+    margin-top: 15px;
+    width: 75px;
+    height: 75px;
+}
+
+.navegacao-2 figcaption{
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    align-self:first baseline;
+    color: rgb(88, 88, 88);
+    margin-bottom: -10px;
+    margin-top: 10px;
+    font-size: 1rem;   
+}
+
+/*FAQ*/
+
+.faq-container{
+    background-color: #FFD1D4;
+    margin-left: -15px;
+    margin-top: 70px;
+    padding-top: 50px;
+    height: 550px;
+    width: 101%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    font-family: 'Raleway', sans-serif;
+	 margin: 0 auto;
+	 width: 48rem;
+}
+
+.container h2{
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: rgb(88, 88, 88);
+}
+ .accordion .accordion-item {
+	 border-bottom: 1.6px solid rgb(88, 88, 88);
+}
+ .accordion .accordion-item button[aria-expanded='true'] {
+	 border-bottom: 1.6px solid #F26B83;
+}
+ .accordion button {
+	 position: relative;
+	 display: block;
+	 text-align: left;
+	 width: 100%;
+	 padding: 1em 0;
+	 color: rgb(88, 88, 88);
+	 font-size: 1.15rem;
+	 font-weight: 400;
+	 border: none;
+	 background: none;
+	 outline: none;
+}
+ .accordion button:hover, .accordion button:focus {
+	 cursor: pointer;
+	 color: #F26B83;
+}
+ .accordion button:hover::after, .accordion button:focus::after {
+	 cursor: pointer;
+	 color: #F26B83;
+	 border: 1px solid #F26B83;
+}
+ .accordion button .accordion-title {
+	 padding: 1em 1.5em 1em 0;
+}
+ .accordion button .icon {
+	 display: inline-block;
+	 position: absolute;
+	 top: 18px;
+	 right: 0;
+	 width: 22px;
+	 height: 22px;
+}
+.accordion button .icon::before {
+    content: url('../../icons/down-arrow.svg');
+    margin-left: -10px;
+    animation: bounce;
+}
+
+.accordion button .icon::after {
+    content: url('../../icons/up-arrow.svg');
+    margin-left: -10px;
+}
+
+ .accordion button[aria-expanded='true'] {
+	 fill: #F26B83;
+}
+ .accordion button[aria-expanded='true'] .icon::before {
+	 display: none;
+}
+ .accordion button[aria-expanded='false'] .icon::after{
+	 display: none;
+}
+ .accordion button[aria-expanded='true'] + .accordion-content {
+	 opacity: 1;
+	 max-height: 9em;
+	 transition: all 200ms linear;
+	 will-change: opacity, max-height;
+}
+ .accordion .accordion-content {
+	 opacity: 0;
+	 max-height: 0;
+	 overflow: hidden;
+	 transition: opacity 200ms linear, max-height 200ms linear;
+	 will-change: opacity, max-height;
+}
+ .accordion .accordion-content p {
+    color: rgb(88, 88, 88);
+	 font-size: 1rem;
+	 font-weight: 300;
+	 margin: 2em 0;
+}
+
+/*FOOTER*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10px;
+}
+
+.footer-2{
+    margin-left: -25px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
+
+.footer-2 p{
+    font-size: small;
+    color: rgb(88, 88, 88);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.footer-2 h3{
+    font-size: medium;
+    color: rgb(88, 88, 88);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.footer-1 ul{
+    margin-top: -10px;
+    margin-left: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;    
+    list-style-type: none;
+}
+
+.footer-1 li {
+    margin: 0 25px;
+}
+
+.footer-1 li a{
+    text-decoration: none;
+}

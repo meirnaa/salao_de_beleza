@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>       
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../estilo/notauser_css/inicio.css">
+    <title>SoftHair</title>
+</head>
+
+<body>
+    <header>
+        <div class="login-container">
+            <a href="./login.html"><i class="fa-solid fa-circle-user fa-xl" style="color: #F65E77;"></i>LOGIN</a>
+        </div>
+        <div class="logo-container">
+            <img id="logo" src="../imagens/logo.png">
+        </div>
+        <div class="carrinho-container">
+            <a href="../notauser_html/carrinho.html">
+              <i class="fa fa-shopping-cart fa-lg"></i><span class="carrinho-numero" id="quantidade-carrinho"></span>
+              CARRINHO 
+            </a>
+          </div>
+    </header>
+    
+
+    <div class="navegacao-1">
+        <div class="barra-opcoes">
+            <ul>
+                <li><a href="./inicio.html">INÍCIO</a></li>
+                <li><a href="#promocoes">OFERTAS DO DIA</a></li>
+                <li><a href="./sobre.html">SOBRE</a></li>
+                <li><a href="./servicos.html">SERVIÇOS</a></li>
+                <li><a href="./ajuda.html">AJUDA</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="corpo">
+        <div class="banner-1"></div>
+        <div class="ofertas-container">
+            <p id="promocoes">PROMOÇÕES</p>
+            <div class="image-container">
+            <a class="prev-btn" onclick="prev()"><i class="fa-solid fa-chevron-right fa-flip-horizontal fa-xl"></i></a>
+              
+            <div class="card" id="card-1">
+                <img src="../imagens/coloracao.jpg" alt="coloracao">
+                <h1 class="nome">Coloração</h1>
+                <p class="original-price">R$ 100,00</p>
+                <p class="promotional-price">R$ 85,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-2">
+                <img src="../imagens/limpeza.jpg" alt="limpeza">
+                <h1 class="nome">Lavagem</h1>
+                <p class="original-price">R$ 45,00</p>
+                <p class="promotional-price">R$ 35,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-3">
+                <img src="../imagens/unha normal.JPG" alt="unhas">
+                <h1 class="nome">Manicure</h1>
+                <p class="original-price">R$ 30,00</p>
+                <p class="promotional-price">R$ 25,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-4">
+                <img src="../imagens/corte.jpg" alt="corte">
+                <h1 class="nome">Corte feminino</h1>
+                <p class="original-price">R$ 60,00</p>
+                <p class="promotional-price">R$ 50,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-5">
+                <img src="../imagens/moreno iluminado.jpg" alt="moreno iluminado">
+                <h1 class="nome">Moreno iluminado</h1>
+                <p class="original-price">R$ 100,00</p>
+                <p class="promotional-price">R$ 90,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-6">
+                <img src="../imagens/escova.jpg" alt="escova">
+                <h1 class="nome">Escova</h1>
+                <p class="original-price">R$ 45,00</p>
+                <p class="promotional-price">R$ 38,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-7">
+                <img src="../imagens/unha em gel.jpg" alt="unha em gel">
+                <h1 class="nome">Unha em gel</h1>
+                <p class="original-price">R$ 100,00</p>
+                <p class="promotional-price">R$ 90,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-8">
+                <img src="../imagens/tratamento capilar.jpg" alt="tratamento capilar">
+                <h1 class="nome">Alisamento a laser</h1>
+                <p class="original-price">R$ 80,00</p>
+                <p class="promotional-price">R$ 68,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <div class="card" id="card-9">
+                <img src="../imagens/henna.jpg" alt="henna">
+                <h1 class="nome">Design com henna</h1>
+                <p class="original-price">R$ 50,00</p>
+                <p class="promotional-price">R$ 40,00
+                    <button class="botao-add"><i class="fa-solid fa-plus"></i></button>
+                </p>
+            </div>
+            <a class="next-btn" onclick="next()"><i class="fa-solid fa-chevron-right fa-xl"></i></a>
+            </div>
+        </div>
+    <!-- caixa de diálogo -->
+    <div id="pedir-login-dialog" class="dialog">
+        <div id="pedir-log-cont1">
+        <p>Oops!</p>
+        <i id="fechar"></i>
+        </div>
+        <div id="pedir-log-cont2">
+        <p>Para continuar com a compra, por favor, faça o login!</p>
+        <button id="ir-pag-login">Fazer login</button>
+        </div>
+    </div>
+
+    </div>
+    <div class="navegacao-2">
+            <ul>
+                <li><i ></i></li>
+                <li><img src="../icons/like.svg" alt="Atendimento de qualidade"><figcaption>Atendimento de qualidade</figcaption1></li>
+                <li><img src="../icons/unha.svg" alt="Profissionais capacitados"><figcaption>Profissionais capacitados</figcaption></li>
+                <li><img src="../icons/house.svg" alt="Infraestrutura adequada"><figcaption>Infraestrutura adequada</figcaption></li>
+                <li><img src="../icons/combos.svg" alt="Promoções"><figcaption>Promoções</figcaption></li>
+            </ul>
+
+    <div class="faq-container" id="faq">
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+          <div class="accordion-item">
+            
+            <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Quais são as formas de pagamento?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Aceitamos pagamento via pix, transferência bancária, cartões de crédito, débito e dinheiro em espécie. Aceitamos cartões Visa, MasterCard e Elo e parcelamos em até 4x.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Qual o endereço do salão?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Atendemos no nosso salão e estamos localizados na Rua Camilo Santos, 1631, Bairro Noivos.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Vocês aceitam walk-ins ou é necessário agendar?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Aceitamos apenas agendamentos via site. Para mais informações, consulte a nossa aba de ajuda.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Qual a política de cancelamento/atraso?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>Caso você tenha algum imprevisto e precise cancelar, nos avise com antecedência via WhatsApp ou DM. Em caso de atraso, tolerância de apenas 5 minutos em respeito a próxima cliente.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">Quais produtos vocês utilizam nos tratamentos capilares?</span><span class="icon" aria-hidden="true"></span></button>
+            <div class="accordion-content">
+              <p>
+                Utilizamos produtos de alta qualidade e marcas renomadas. Se você tiver alguma alergia ou preferência por uma marca específica, por favor, avise-nos antecipadamente.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-1">
+            <ul>
+            <li>
+                <a href="#" class="fab fa-facebook-square fa-xl" style="color: rgb(88 88 88);"></a>
+            </li>
+        
+            <li>
+                <a href="#" class="fab fa-instagram-square fa-xl" style="color: rgb(88 88 88);"></a>
+            </li>
+        
+            <li>
+                <a href="#" class="fab fa-whatsapp-square fa-xl" style="color: rgb(88 88 88);"></a>
+            </li>
+            </ul>
+        <div class="footer-2">
+            <h3>SoftHair</h3>
+            <p>© 2023 by LM2RT. All rights deserved.</p>
+        </div>
+        </div>
+    </footer>
+    <script src="../funções/notauser_js/inicio.js"></script>
+</body>
+</html>

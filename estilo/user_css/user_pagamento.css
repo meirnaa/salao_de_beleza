@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+header {
+    height: 120px;
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Alterado para coluna para centralizar verticalmente */
+    justify-content: space-between; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    background-color: white;
+}
+
+#logo {
+    width: 80px;
+    height: 75px;
+}
+
+header a {
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #F65E77;
+}
+
+header a i{
+    margin-right: 10px;
+}
+
+.login-container {
+    margin-left: 350px;
+    position: absolute;
+}
+
+.logo-container{
+    position: absolute;
+    margin-left: 700px;
+}
+
+.carrinho-container{
+    position: absolute;
+    margin-left: 1050px;
+}
+
+.carrinho-numero {
+    background-color: red; /* Cor de fundo da bolinha */
+    color: #fff; /* Cor do texto do número */
+    margin-top: 4px;
+    padding-top: 1px; /* Espaçamento interno da bolinha */
+    padding-bottom: 1px; /* Espaçamento interno da bolinha */
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 50%; /* Para tornar a bolinha circular */
+    font-size: 12px; /* Tamanho da fonte do número */
+    position: absolute;
+    top: -18px; /* Ajuste a posição vertical conforme necessário */
+    margin-left: -17px; /* Ajuste a posição horizontal conforme necessário */
+}
+
+/* Mantenha o bloco .navegacao-1 e seus estilos */
+
+.navegacao-1 {
+    background-color: #FFD1D4;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    padding: 0 20px; /* Adapte conforme necessário */
+    box-shadow: 0px 0px 2.5px #F277B0;
+}
+
+.barra-opcoes ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: 400px;
+}
+
+.barra-opcoes li {
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    font-size: 0.95rem;
+    margin: 0 25px;
+}
+
+.barra-opcoes li a {
+    text-decoration: none;
+    color: #F26B83;
+}
+
+.barra-opcoes li a:hover {
+    color: white;
+}
+
+/*CONTAINER COM AGENDA*/
+.corpo #shopping-titulo{
+    font-family: 'Coppeplate', fantasy;
+    color: #F285A2;
+    font-size: 3rem;
+    font-weight: normal;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: solid 2px #CCCCCC;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 80px;
+    height: 1000px;
+}
+
+.recomendacoes{
+    padding-top: 50px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #F26B83;
+    font-family: 'Raleway', sans-serif;
+}
+
+.agenda{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+#finalizar-pagamento{
+    border: solid 1px #F24949;
+    font-weight: 700;
+    padding: 15px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    background-color: #F26B83;
+    cursor: pointer;
+    margin-top: -25px;
+    border-radius: 5px; 
+    font-size: 1rem;
+    width: 250px;
+    align-self: center;
+}
+
+#finalizar-pagamento:hover{
+    background-color: #f48da0;
+    font-size: 1rem;
+    font-weight: 750;
+    margin-bottom: 20px;
+}
+
+.descricao-compra {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+#resumo-compra{
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color: rgb(180, 107, 180);
+    text-align: left;
+}
+
+#produtos-label,
+#preco-label {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(180, 107, 180);
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+#quantidade-quantidade,
+#total {
+    margin-left: 10px;
+    margin-top: 4px;
+    color: rgb(88, 88, 88);
+    font-size: 0.95rem;
+}
+
+.alerta{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(180, 107, 180);
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 2px #CCCCCC;
+  }
+  
+  #formulario .real-form{
+    font-family: 'Raleway', sans-serif;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  
+  #formulario .real-form input::placeholder{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(180, 107, 180);
+    font-weight: 500;
+  }
+  
+  #formulario .real-form :focus::placeholder {
+    font-family: 'Raleway', sans-serif;
+    color:  rgb(225, 199, 225);
+  }
+  
+  #formulario .real-form input {
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    outline: none;
+    border: 2px solid rgb(180, 107, 180);
+    border-radius: 5px;
+    margin: 20px;
+    padding-left: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    transition: border-color 0.3s;
+  }
+  
+  #formulario .real-form input:focus {
+    border-color: rgb(180, 107, 180);;
+  }
+
+  #formulario textarea::placeholder{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(180, 107, 180);
+    font-weight: 500;
+  }
+  
+  #formulario textarea:focus::placeholder {
+    font-family: 'Raleway', sans-serif;
+    color:  rgb(225, 199, 225);
+  }
+  
+  #formulario textarea {
+    font-family: 'Raleway', sans-serif;
+    font-weight: normal;
+    outline: none;
+    border: 2px solid rgb(180, 107, 180);
+    border-radius: 5px;
+    margin: 20px;
+    padding-left: 30px;
+    padding-top: 30px;
+    width: 100%;
+    transition: border-color 0.3s;
+  }
+  
+  #formulario textarea:focus {
+    border-color: rgb(180, 107, 180);
+  }
+
+  .container-pagamento {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+}
+
+
+/* Reset de estilos padrão do select */
+.styled-select {
+    position: relative;
+}
+
+
+.styled-select select {
+    width: 250px;
+    padding: 15px;
+    margin-right: 410px;
+    border: solid 2px;
+    border-color: rgb(180, 107, 180);
+    border-radius: 5px;
+    appearance: none; /* Remover estilo padrão do navegador */
+    -webkit-appearance: none; /* Para navegadores Webkit (Chrome, Safari, etc.) */
+    -moz-appearance: none; /* Para navegadores Firefox */
+}
+
+/* Estilização adicional para dar um toque atraente */
+.styled-select select:focus {
+    border: solid 2px;
+    border-color: rgb(180, 107, 180);
+    outline: none;
+}
+
+.styled-select::before {
+    content: '\2B9F'; /* Seta para baixo usando Unicode */
+    top: 35%;
+    position: absolute;
+    transform: translateX(220px);
+    font-size: 0.8rem;
+    color: rgb(180, 107, 180);
+    pointer-events: none;
+}
+
+/* Adiciona estilo quando o select está focado */
+.styled-select::after {
+    content: '\25BC'; /* Mesmo Unicode para manter a consistência */
+    top: 35%;
+    right: 0px;
+    transform: translateX(-428px);
+    font-size: 0.8em;
+    color: rgb(180, 107, 180);
+    pointer-events: none;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s; /* Adiciona transição para suavizar a mudança */
+}
+
+.styled-select option{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(88, 88, 88);
+    font-size: 1rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.styled-select .form-input option{
+    padding: 30px;
+}
+
+.styled-select select:focus + ::after {
+    opacity: 1; /* Torna a seta visível quando o select está focado */
+}
+
+
+.custom-select-pagamento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+  #botao-3{
+    margin-top: 100px;
+    margin-bottom: 5px;
+    background-color: rgb(180, 107, 180);
+    font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+        /* Centralize o botão horizontalmente */
+        margin-left: auto;
+        margin-right: auto;
+    
+        /* Adicione uma largura máxima para evitar que o botão fique muito largo em telas grandes */
+        max-width: 100%;
+    border-radius: 25px; 
+    padding: 8px 45px;
+    font-size: 0.8rem;
+  }
+  
+  #botao-3:hover{
+    background-color: rgb(225, 199, 225);
+    font-weight: 700;
+    padding: 8px 45px;
+    font-size: 0.8rem;
+  }
+  
+  #botao-3.desativado {
+    pointer-events: none;
+    background-color: #e4e4e4; /* ou qualquer outra cor que indique visualmente que o botão está desativado */
+    cursor: not-allowed;
+  }
+
+
+/*FOOTER*/
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -10px;
+}
+
+.footer-2{
+    margin-left: -25px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
+
+.footer-2 p{
+    font-size: small;
+    color: rgb(88, 88, 88);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+.footer-2 h3{
+    font-size: medium;
+    color: rgb(88, 88, 88);
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.footer-1 ul{
+    margin-top: 200px;
+    margin-left: -20px;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;    
+    list-style-type: none;
+}
+
+.footer-1 li {
+    margin: 0 25px;
+}
+
+.footer-1 li a{
+    text-decoration: none;
+}

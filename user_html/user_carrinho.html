@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>       
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../estilo/user_css/user_carrinho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-d3ETCefUR+s1VTiV7ZVcvKGHAnl5l5/jW3pExH6pG1rHDJO+UbdWf1/SFmBQIfwM" crossorigin="anonymous">
+    <title>SoftHair</title>
+</head>
+
+<body>
+    <header>
+        <div class="login-container">
+            <a href="../notauser_html/inicio.html"><i class="fa-solid fa-user-xmark fa-lg" style="color: #F65E77;"></i>SAIR</a>
+        </div>
+        <div class="logo-container">
+            <img id="logo" src="../imagens/logo.png">
+        </div>
+        <div class="carrinho-container">
+            <a href="../user_html/user_carrinho.html">
+                <i class="fa fa-shopping-cart fa-lg"></i><span class="carrinho-numero" id="quantidade-carrinho"></span>
+                CARRINHO 
+            </a>
+        </div>
+        
+    </header>
+    
+    <div class="navegacao-1">
+        <div class="barra-opcoes">
+            <ul>
+                <li><a href="./user_inicio.html">INÍCIO</a></li>
+                <li><a href="./user_inicio.html#promocoes">OFERTAS DO DIA</a></li>
+                <li><a href="./user_sobre.html">SOBRE</a></li>
+                <li><a href="./user_servicos.html">SERVIÇOS</a></li>
+                <li><a href="./user_ajuda.html">AJUDA</a></li>
+                <li><a href="./user_inicio.html#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="corpo">
+            <p id="shopping-titulo">Meu carrinho</p>
+            <div class="shopping-container">
+                <div class="shopping-content-1">
+                    <div class="cont-1-titulo"><p>Carrinho</p><div id="produtos-quantidade"></div></div>
+                    <div class="produtos-menu">
+                        <div class="produtos-produtos"><p>Produtos</p></div>
+                        <div class="produtos-quant"><p>Quantidade</p></div>
+                        <div class="produtos-preco"><p>Preço (1)</p></div>
+                        <div class="produtos-remover"><p>Remover</p></div>
+                    </div>
+                    <div class="produtos-tabela"></div>
+                </div>
+        
+                <div class="shopping-content-2">
+                    <div class="total-compra">
+                        <p>Total:</p>
+                        <p id="total-total"></p>
+                    </div>
+                    <div class="descricao-compra">
+                        <p id="produtos-label">Produtos: <span id="quantidade-quantidade"></span></p>
+                        <p id="preco-label">Preço: <span id="total"></span></p>
+                    </div>                    
+                    
+                    <div class="shopping-botoes">
+                        <button id="finalizar-pagamento" onclick="ir_para_pagamento()">Finalizar pagamento</button>
+                        <a id="continuar-comprando" href="user_inicio.html"><p>Continuar comprando</p><img src="../icons/right-arrow.svg"></a>
+                    </div> 
+                </div>
+            </div>
+            <p id="shopping-titulo">AGENDAMENTO</p>
+        <div class="content">
+            <p class="alerta">ATENÇÃO!!! MÁXIMO DE 3 SERVIÇOS POR PESSOA EM UM ÚNICO DIA</p>
+            <p class="recomendacoes">🌺 Se tiver adicionado mais de 3 serviços, lembre-se de marcá-los em dias diferentes! </p>
+            
+            <div class="agenda"><!-- Google Calendar Appointment Scheduling begin -->
+                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1b_HtObiid2zXjUab4HD747iwLpzimP2HloxqMp7YLChUtr1qPrTpCVfnRqCE8JT3Bthmx9hAu?gv=true" style="border: 0" width="100%" height="800" frameborder="0"></iframe>
+                <!-- end Google Calendar Appointment Scheduling --></div>
+        </div>        
+    </div>
+    <footer>
+        <div class="footer-1">
+            <ul>
+            <li>
+                <a href="#" class="fab fa-facebook-square fa-xl" style="color: rgb(88 88 88);"></a>
+            </li>
+        
+            <li>
+                <a href="#" class="fab fa-instagram-square fa-xl" style="color: rgb(88 88 88);"></a>
+            </li>
+        
+            <li>
+                <a href="#" class="fab fa-whatsapp-square fa-xl" style="color: rgb(88 88 88);"></a>
+            </li>
+            </ul>
+        <div class="footer-2">
+            <h3>SoftHair</h3>
+            <p>© 2023 by LM2RT. All rights deserved.</p>
+        </div>
+        </div>
+    </footer>
+    <script src="../funções/user_js/user_carrinho.js"></script>
+</body>
+</html>
