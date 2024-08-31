@@ -1,2 +1,2 @@
-# salao-de-beleza.github.io
+# salao_de_beleza.github.io
 SoftHair
