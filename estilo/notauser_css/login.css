@@ -20,6 +20,12 @@ body {
   overflow: hidden; /* Para esconder a imagem que ultrapassa a caixa */
 }
 
+#formulario .real-form h2 {
+  font-family: 'Raleway', sans-serif;
+  color: #F24949;
+  margin-top: -10px;
+}
+
 .imagem-principal {
   flex: 1;
   overflow: hidden; /* Para garantir que a imagem não ultrapasse a caixa */
@@ -220,6 +226,13 @@ text-align: center;
 
 #link{
   font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  margin-left: -20px;
+}
+
+p {
+  font-size: 0.8rem;
   font-family: 'Raleway', sans-serif;
   color: black;
   margin-left: -20px;

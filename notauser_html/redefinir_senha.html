@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir Senha</title>
+    <link rel ="stylesheet" href = "../estilo/notauser_css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-GLhlTQ8iN17ZLqnprn7dKOUHGAjZfYD5P6be4uH5p2L5P5Z2ERpjwGfoFSLFA" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Roboto:wght@300&family=Tilt+Warp&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        <!-- Imagem Principal do lado esquerdo -->
+        <div class="imagem-principal">
+            <img src="../imagens/2.png" alt="SoftHair">
+        </div>
+
+        <!-- Conteúdo principal do lado direito -->
+        <div class="login-page">           
+
+                <!-- Formulário -->
+                <form id="formulario">
+                    <div class="real-form">
+                        <h2>Redefinir Senha</h2>
+                        <input id="email" type="email" placeholder="SEU EMAIL" autocomplete="email">
+                        <input id="nova-senha" type="password" placeholder="NOVA SENHA" autocomplete="password" maxlength="10">
+                        <span class="olho-icon" onclick="toggleSenhaVisibility('nova-senha', 'olho-icon-nova')">
+                            <i id="olho-icon-nova" class="fas fa-eye-slash"></i>
+                        </span>
+                        <input id="confirma-senha" type="password" placeholder="CONFIRME NOVA SENHA" autocomplete="password" maxlength="10">
+                        <span class="olho-icon" onclick="toggleSenhaVisibility('confirma-senha', 'olho-icon-nova')">
+                            <i id="olho-icon-nova" class="fas fa-eye-slash"></i>
+                        </span>
+                    </div>
+                </form>
+                <!-- Div para exibir mensagens de erro -->
+                <div id="mensagem-erro" style="display: none;">
+                    <p id="mensagem-erro-texto"></p>
+                </div>
+                <input id="botao-3" type="submit" value="ENVIAR CÓDIGO" onclick="EnviarCodigo()">
+                <p>Após envio do código, cheque seu email!</p>
+                <div class="message" id="message"></div>
+    <script>
+        var mensagemErroDiv = document.getElementById("mensagem-erro-texto");
+        
+        // Adicionar eventos de input para validação
+        document.getElementById('nova-senha').addEventListener('input', validarSenhas);
+        document.getElementById('confirma-senha').addEventListener('input', validarSenhas);
+        // Função para validar as senhas
+        function validarSenhas() {
+            const novaSenha = document.getElementById('nova-senha').value;
+            const confirmaSenha = document.getElementById('confirma-senha').value;
+
+            if (novaSenha !== confirmaSenha) {
+                mensagemErroDiv.innerHTML = "Senhas não conferem.";
+                document.getElementById("mensagem-erro").style.display = "block";
+                botaoEntrar.classList.remove("desativado");
+                botaoEntrar.disabled = false;
+            }else{
+            // Esconde a mensagem de erro
+                document.getElementById("mensagem-erro").style.display = "none";
+
+            }
+        }
+
+
+        // Função para gerar código aleatório
+        function gerarCodigo() {
+            return Math.floor(100000 + Math.random() * 900000); // Gera um código de 6 dígitos
+        }
+
+        // Função para enviar o código (simulado)
+        function enviarCodigoPorEmail(email, codigo) {
+            // Simulação de envio de e-mail (deve ser feito no servidor)
+            console.log(`Código enviado para ${email}: ${codigo}`);
+            // Aqui você deve implementar a lógica para enviar o e-mail real
+        }
+
+        function toggleSenhaVisibility(inputId, iconId) {
+            const passwordInput = document.getElementById(inputId);
+            const olhoIcon = document.getElementById(iconId);
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                olhoIcon.classList.remove("fa-eye-slash");
+                olhoIcon.classList.add("fa-eye");
+            } else {
+                passwordInput.type = "password";
+                olhoIcon.classList.remove("fa-eye");
+                olhoIcon.classList.add("fa-eye-slash");
+            }
+        }
+
+        // Função para atualizar a senha
+        function atualizarSenha() {
+            const email = document.getElementById('email').value;
+            const novaSenha = document.getElementById('nova-senha').value;
+            const codigoDigitado = document.getElementById('codigo').value;
+            const codigoGerado = localStorage.getItem('codigo'); // Código armazenado no localStorage
+
+            if (codigoDigitado === codigoGerado) {
+                // Atualiza a senha no localStorage
+                localStorage.setItem(email, novaSenha);
+                document.getElementById('message').innerHTML = "Senha alterada com sucesso!";
+                document.getElementById('message').style.color = 'green';
+                document.getElementById('codigo-div').style.display = 'none';
+                document.getElementById('enviar-btn').innerHTML = 'Voltar à página principal';
+                document.getElementById('enviar-btn').onclick = function() {
+                    window.location.href = 'inicio.html'; // Redireciona para a página principal
+                };
+            } else {
+                mensagemErroDiv.innerHTML = "Código incorreto. Por favor, digite novamente.";
+            }
+        }
+
+        // Evento para o envio do formulário
+        document.getElementById('redefinir-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            if (validarSenhas()) {
+                const email = document.getElementById('email').value;
+                const novaSenha = document.getElementById('nova-senha').value;
+
+                if (document.getElementById('codigo-div').style.display === 'none') {
+                    const codigo = gerarCodigo();
+                    localStorage.setItem('codigo', codigo); // Armazena o código no localStorage
+                    enviarCodigoPorEmail(email, codigo);
+                    document.getElementById('codigo-div').style.display = 'block';
+                    document.getElementById('enviar-btn').innerHTML = 'Verificar Código';
+                    document.getElementById('enviar-btn').onclick = atualizarSenha;
+                } else {
+                    atualizarSenha();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

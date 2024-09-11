@@ -28,9 +28,22 @@ function ir_para_principal() {
 }
 
 var mensagemErroDiv = document.getElementById("mensagem-erro-texto");
+ // Adicionar eventos de input para validação
+ document.getElementById('formulario').addEventListener('input', validarEmail);
+
+function validarEmail(){
+    const email = document.getElementById('email').value;
+    const emailExistente = localStorage.getItem('userEmail');
+
+    if (emailExistente === email) {
+        mensagemErroDiv.innerHTML = "Esse e-mail já está cadastrado.";
+        document.getElementById("mensagem-erro").style.display = "block";
+        botaoCriarConta.classList.remove("desativado");
+        botaoCriarConta.disabled = true;
+    }
+}
 
 function validarFormulario() {
-
     const nome = document.getElementById('nome').value;
     const telefone = document.getElementById('telefone').value;
     const email = document.getElementById('email').value;
@@ -43,6 +56,10 @@ function validarFormulario() {
         senha: senha
     };
 
+    const botaoCriarConta = document.getElementById("botao-3");
+    botaoCriarConta.disabled = true;
+    botaoCriarConta.classList.add("desativado");
+
     // Realiza a validação do formulário
     const erro = verificarErro(dados);
 
@@ -52,49 +69,39 @@ function validarFormulario() {
     document.getElementById("email").disabled = true;
     document.getElementById("password").disabled = true;
 
-    const botaoCriarConta = document.getElementById("botao-3");
-    botaoCriarConta.disabled = true;
-
-    // Adiciona a classe desativado
-    botaoCriarConta.classList.add("desativado");
-
     // Aguarda 2 segundos antes de decidir se há um erro ou não
     setTimeout(() => {
+        if (erro) {
+            // Exibe mensagem de erro se houver
+            exibirMensagemErro("Ocorreu um erro! Confira seus dados.");
 
-    if (erro){ 
-        // Exibe mensagem de erro se houver
-        exibirMensagemErro("Ocorreu um erro! Confira seus dados.");
+            // Desbloqueia os campos do formulário e o botão de envio
+            document.getElementById("nome").disabled = false;
+            document.getElementById("telefone").disabled = false;
+            document.getElementById("email").disabled = false;
+            document.getElementById("password").disabled = false;
+            botaoCriarConta.disabled = false;
+            botaoCriarConta.classList.remove("desativado");
 
-        // Desbloqueia os campos do formulário e o botão de envio
-        document.getElementById("nome").disabled = false;
-        document.getElementById("telefone").disabled = false;
-        document.getElementById("email").disabled = false;
-        document.getElementById("password").disabled = false;
+            // Reseta os campos do formulário
+            document.getElementById("nome").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("telefone").value = "";
+        }
+        else {
+            // Armazena os dados no localStorage
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userPassword', senha);
 
-        const botaoCriarConta = document.getElementById("botao-3");
-        botaoCriarConta.disabled = true;
+            console.log(localStorage);
 
-        // Reseta os campos do formulário
-        document.getElementById("nome").value = "";
-        document.getElementById("email").value = "";
-        document.getElementById("password").value = "";
-        document.getElementById("telefone").value = "";
+            // Esconde a mensagem de erro
+            document.getElementById("mensagem-erro").style.display = "none";
 
-        // Remove a classe desativado
-        botaoCriarConta.classList.remove("desativado");
-        botaoCriarConta.disabled = false;
-
-    } else {
-
-        // Esconde a mensagem de erro
-        document.getElementById("mensagem-erro").style.display = "none";
-
-        console.log('Dados:', dados);
-
-        enviarParaServidor(dados);
-      // Redireciona para SoftHair.html
-      ir_para_principal();
-      }
+            // Redireciona para SoftHair.html
+            ir_para_principal();
+        }
     }, 2000);
 }
 
@@ -121,21 +128,4 @@ function isValidEmail(email) {
 function exibirMensagemErro(mensagem) {
     mensagemErroDiv.innerHTML = mensagem;
     document.getElementById("mensagem-erro").style.display = "block";
-}
-
-function enviarParaServidor(dados) {
-    fetch('http://localhost:5277/Usuario/Create', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dados),
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Resposta do servidor:', data);
-    })
-    .catch(error => {
-        console.error('Erro ao enviar para o servidor:', error);
-    });
 }
